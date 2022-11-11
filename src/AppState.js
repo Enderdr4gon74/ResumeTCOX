@@ -1,4 +1,7 @@
 import { reactive } from 'vue'
+import { Achievement } from './models/Achievement.js'
+import { Job } from './models/Job.js'
+import { Requirement } from './models/Requirement.js'
 import { School } from './models/School.js'
 import { Skill } from './models/Skill.js'
 
@@ -7,7 +10,8 @@ export const AppState = reactive({
   user: {},
   /** @type {import('./models/Account.js').Account} */
   account: {},
-
+  
+  /** @type {import('./models/School.js').School[]} */
   education: [
     new School({
       Name: "Kuna High School",
@@ -24,7 +28,8 @@ export const AppState = reactive({
       Link: "https://boisecodeworks.com/"
     })
   ],
-
+  
+  /** @type {import('./models/Skill.js').Skill[]} */
   skills: [
     new Skill({
       Name: "Google Suite",
@@ -134,26 +139,6 @@ export const AppState = reactive({
       ]
     }),
     new Skill({
-      Name: "SQL",
-      Description: "SQL or Structure Query Language is a programming language that is specifically for manipulating data from a MySQL database",
-      Icons: [
-        {
-          Img: 
-          "https://imgs.search.brave.com/OJqj0MvCdchdbDCwbvju-sDde9bdJ-iE_znYVVvlbaY/rs:fit:900:900:1/g:ce/aHR0cHM6Ly9saWJy/YXJ5Lmtpc3NjbGlw/YXJ0LmNvbS8yMDE4/MTEyMy9veXEva2lz/c2NsaXBhcnQtc3Fs/LWRiLWNsaXBhcnQt/bWljcm9zb2Z0LWF6/dXJlLXNxbC1kYXRh/YmFzZS1kOGZlODZh/ZmQ3N2VlMTI0Lmpw/Zw",
-        },
-      ]
-    }),
-    new Skill({
-      Name: "C#",
-      Description: "C Sharp is a programming language that is very strict with it's typing, declarations, and functions. That makes it better for servers since it will impose more restrictions on the users data and other items they might try to pass in.",
-      Icons: [
-        {
-          Img: 
-          "https://imgs.search.brave.com/whcyY9iy21_T3uG7pNVXFBDOi-j-SY_THV1yRlW8nEE/rs:fit:860:1006:1/g:ce/aHR0cHM6Ly93d3cu/cG5naXRlbS5jb20v/cGltZ3MvbS81MjEt/NTIxOTU4N19jLWxv/Z28tdHJhbnNwYXJl/bnQtYmFja2dyb3Vu/ZC1oZC1wbmctZG93/bmxvYWQucG5n",
-        },
-      ]
-    }),
-    new Skill({
       Name: "MVC File Flow Structure",
       Description: "MVC is a file structure that organizes functions into: View - What the user sees, Controller - where the functions that any interactable button or item might activate, Service - where all the business logic for each function lays, AppState - where all the current data lays, Models - where the formats of data lay",
       Icons: []
@@ -192,6 +177,26 @@ export const AppState = reactive({
       ]
     }),
     new Skill({
+      Name: "C#",
+      Description: "C Sharp is a programming language that is very strict with it's typing, declarations, and functions. That makes it better for servers since it will impose more restrictions on the users data and other items they might try to pass in.",
+      Icons: [
+        {
+          Img: 
+          "https://imgs.search.brave.com/whcyY9iy21_T3uG7pNVXFBDOi-j-SY_THV1yRlW8nEE/rs:fit:860:1006:1/g:ce/aHR0cHM6Ly93d3cu/cG5naXRlbS5jb20v/cGltZ3MvbS81MjEt/NTIxOTU4N19jLWxv/Z28tdHJhbnNwYXJl/bnQtYmFja2dyb3Vu/ZC1oZC1wbmctZG93/bmxvYWQucG5n",
+        },
+      ]
+    }),
+    new Skill({
+      Name: "SQL",
+      Description: "SQL or Structure Query Language is a programming language that is specifically for manipulating data from a MySQL database",
+      Icons: [
+        {
+          Img: 
+          "https://imgs.search.brave.com/OJqj0MvCdchdbDCwbvju-sDde9bdJ-iE_znYVVvlbaY/rs:fit:900:900:1/g:ce/aHR0cHM6Ly9saWJy/YXJ5Lmtpc3NjbGlw/YXJ0LmNvbS8yMDE4/MTEyMy9veXEva2lz/c2NsaXBhcnQtc3Fs/LWRiLWNsaXBhcnQt/bWljcm9zb2Z0LWF6/dXJlLXNxbC1kYXRh/YmFzZS1kOGZlODZh/ZmQ3N2VlMTI0Lmpw/Zw",
+        },
+      ]
+    }),
+    new Skill({
       Name: "DotNet",
       Description: "DotNet is another type of framework for back-end purposes that uses C#, SQL, and MySQL to create a server",
       Icons: [
@@ -211,6 +216,153 @@ export const AppState = reactive({
           "https://imgs.search.brave.com/lczo_-Rnm6rCCDYQzSkpbN1ij0jvDUYYVtL0xWVSstM/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9wbmdp/bWcuY29tL3VwbG9h/ZHMvbXlzcWwvbXlz/cWxfUE5HMjMucG5n",
           Link: "https://www.mysql.com/"
         },
+      ]
+    }),
+  ],
+
+  /** @type {import('./models/Achievement.js').Achievement[]} */
+  achievements: [
+    new Achievement({
+      Name: "Introduction to Adobe Photoshop 2018",
+      Date: "2019"
+    }),
+    new Achievement({
+      Name: "Introduction to Adobe Illustrator 2018",
+      Date: "2019-2021"
+    }),
+    new Achievement({
+      Name: "Introduction to Adobe InDesign 2018",
+      Date: "2021"
+    }),
+    new Achievement({
+      Name: "Adobe Certified Professional: Visual Design",
+      Date: "2021"
+    }),
+    new Achievement({
+      Name: "Introduction to Programming using Java",
+      Date: "2021"
+    }),
+  ],
+
+  /** @type {import('./models/Job.js').Job[]} */
+  workExperience: [
+    new Job({
+      Company: "Bretz Rv",
+      Location: "Boise ID",
+      To: "July 30th, 2022",
+      From: "April 4th, 2022",
+      JobTitle: "Propane Attendant",
+      Requirements: []
+    }),
+    new Job({
+      Company: "Autozone",
+      Location: "Kuna ID",
+      To: "April 2nd, 2022",
+      From: "April 2021",
+      JobTitle: "Sales Associate",
+      Requirements: [
+        new Requirement({
+          Name: "Provide WOW! Customer Service."
+        }),
+        new Requirement({
+          Name: "Ensure assigned store tasks are completed promptly on the assigned shift."
+        }),
+        new Requirement({
+          Name: "Utilize ZNET to help customers locate merchandise or find suitable alternatives."
+        }),
+        new Requirement({
+          Name: "Follow company policies and loss prevention procedures."
+        }),
+        new Requirement({
+          Name: "Maintain a safe working environment including PPE (Personal Protective Equipment)."
+        }),
+        new Requirement({
+          Name: "Ability to diagnose automobile problems and recommend solutions."
+        }),
+        new Requirement({
+          Name: "Maintain store appearance and merchandising standards as directed."
+        }),
+        new Requirement({
+          Name: "Ensure that merchandise is restocked and placed in their respective areas."
+        }),
+        new Requirement({
+          Name: "Maintain product knowledge and current promotions through AutoZone systems and information sources."
+        }),
+        new Requirement({
+          Name: "Provide honest and trustworthy advice to customers regarding the best products that fit the customers' expectations."
+        }),
+        new Requirement({
+          Name: "Practice GOTTChA and assists with the installation of wipers blades, batteries, and light bulbs."
+        }),
+        new Requirement({
+          Name: "Utilize OBDII to read codes from customer's automobile."
+        }),
+        new Requirement({
+          Name: "Operate cash registers and follow established cash handling procedures."
+        }),
+        new Requirement({
+          Name: "Communicate with managers regarding customer concerns and employee matters."
+        }),
+        new Requirement({
+          Name: "Actively engaged in developing more effective customer service skills."
+        }),
+      ]
+    }),
+    new Job({
+      Company: "Wendy's",
+      Location: "Kuna ID",
+      To: "Feb 2021",
+      From: " June 2020",
+      JobTitle: "Crewmate",
+      Requirements: [
+        new Requirement({
+          Name: "Assemble food orders while maintaining appropriate portion control."
+        }),
+        new Requirement({
+          Name: "Retrieves raw food stock and place at the appropriate station for preparation."
+        }),
+        new Requirement({
+          Name: "Performs duties to prepare food."
+        }),
+        new Requirement({
+          Name: "Operated fry station for drive-thru and dining room."
+        }),
+        new Requirement({
+          Name: "Cleaned & sanitized food preparation dishes, devices, and materials."
+        }),
+        new Requirement({
+          Name: "Performed closing procedures."
+        }),
+      ]
+    }),
+    new Job({
+      Company: "Subway",
+      Location: "Kuna ID",
+      To: "August 2020",
+      From: "June 2020",
+      JobTitle: "Sandwich Artist",
+      Requirements: [
+        new Requirement({
+          Name: "Created custom sandwiches as ordered."
+        }),
+        new Requirement({
+          Name: "Maintained excellent customer service during fast-paced lunch and dinner rushes."
+        }),
+        new Requirement({
+          Name: "Cleaned, sanitized, and organized dining room area to maintain a comfortable and clean environment."
+        }),
+        new Requirement({
+          Name: "Processed customer payments via POS register, including accurate cash handling and credit card transactions."
+        }),
+        new Requirement({
+          Name: "Cleaned & sanitized food preparation dishes, devices, and materials."
+        }),
+        new Requirement({
+          Name: "Prepared food & materials to be used for sandwich creations."
+        }),
+        new Requirement({
+          Name: "Performed closing procedures."
+        }),
       ]
     }),
   ]
